@@ -1,0 +1,107 @@
+<div class="step-cont">
+  <div class="step-main">
+    
+    <div class="main-info">
+      <md-tab-group class="tabs-card" selectedIndex={{onCard}}>
+        
+        <md-tab disabled>
+          <div class="main-field">
+            <i class="material-icons">person</i>
+            <md-input-container>
+              <input mdInput placeholder="Firma1">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">credit_card</i>
+            <md-input-container>
+              <input mdInput placeholder="Max Mustermann">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">person</i>
+            <md-input-container>
+              <input mdInput placeholder="Nachnamen eingeben...">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">location_on</i>
+            <md-input-container>
+              <input mdInput placeholder="PLZ">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput placeholder="Ort">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">location_on</i>
+            <md-select placeholder="Land">
+              <md-option value="land1">Land1</md-option>
+              <md-option value="land2">Land2</md-option>
+              <md-option value="land3">Land3</md-option>
+            </md-select>
+          </div>
+        </md-tab>
+
+        <md-tab disabled>
+          <div class="main-field">
+            <i class="material-icons">person</i>
+            <md-input-container>
+              <input mdInput placeholder="Firma1">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">credit_card</i>
+            <md-input-container>
+              <input mdInput placeholder="Max Mustermann">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">person</i>
+            <md-input-container>
+              <input mdInput placeholder="Nachnamen eingeben...">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">location_on</i>
+            <md-input-container>
+              <input mdInput placeholder="PLZ">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput placeholder="Ort">
+            </md-input-container>
+          </div>
+          <div class="main-field">
+            <i class="material-icons">location_on</i>
+            <md-select placeholder="Land">
+              <md-option value="land1">Land1</md-option>
+              <md-option value="land2">Land2</md-option>
+              <md-option value="land3">Land3</md-option>
+            </md-select>
+          </div>
+        </md-tab>
+
+      </md-tab-group>
+    </div>
+
+    <div class="main-file card-cont">
+      <md-radio-group [(ngModel)]="onCard">
+        <md-radio-button value="0">
+          <i class="material-icons">payment</i> <span>Kreditkarte</span>
+        </md-radio-button>
+        <md-radio-button value="1">
+          <i class="material-icons">payment</i> <span>Rechnung</span>
+        </md-radio-button>
+        <md-radio-button value="2">
+          <i class="material-icons">payment</i> <span>PayPal</span>
+        </md-radio-button>
+        <md-radio-button value="3">
+          <i class="material-icons">payment</i> <span>Sofortuberweisung</span>
+        </md-radio-button>
+      </md-radio-group>
+      <div class="main-price">
+        <div class="price1">€ 39,- Statt € 49,-</div>
+        <div class="price2">Preis inkl. MwSt.</div>
+      </div>
+    </div>
+  </div>
+</div>

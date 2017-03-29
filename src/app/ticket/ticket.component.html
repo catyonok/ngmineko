@@ -1,0 +1,308 @@
+<div class="main-menu">
+  <div class="menu-cont">
+    <div class="menu-left"><img src="assets/logo_mineko.svg" alt="logo_mineko" routerLink="/"></div>
+    <div class="menu-space"></div>
+    <div class="menu-right">
+      <span>Bekannt aus : </span>
+      <img src="assets/logo_ard.svg" alt="logo_ard">
+      <img src="assets/logo_welt.svg" alt="logo_welt">
+      <img src="assets/logo_rtl.svg" alt="logo_rtl">
+    </div>
+  </div>
+</div>
+
+<div class="main-head">
+  <div class="head-back">
+    <div class="head-tito">
+      <h1>Jetzt <span>Nebenkostenabrechnung</span> hochladen</h1>
+      <h2>Hallo einfach hochladen wir kümmern uns</h2>
+    </div>
+    <div class="tabs-uplo">
+      <md-tab-group dynamicHeight class="tabs-mode" selectedIndex={{onMode}} (selectChange)="onMODE($event.index)">
+        
+        <md-tab class="tabs-online">
+          <template md-tab-label>
+            <div class="mode-labe">ONLINE</div>
+          </template>
+          <md-tab-group dynamicHeight class="tabs-step" [ngClass]="{
+              onstep1: onStep == 0, 
+              onstep2: onStep > 0, 
+              onstep3: onStep > 1, 
+              onstep4: onStep > 2
+            }" selectedIndex={{onStep}}>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step1">
+                  <div class="step-text">{{ (onlineStep1 | async)?.name }}</div>
+                  <div class="step-numb"><span>1</span><i class="material-icons">check</i></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step1 #onlineStepFirst></app-step1>
+            </md-tab>
+            <md-tab disabled class="online-step2">
+              <template md-tab-label>
+                <div class="labe-step step2">
+                  <div class="step-text">{{ (onlineStep2 | async)?.name }}</div>
+                  <div class="step-numb"><span>2</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step2 #onlineStepSecond></app-step2>
+            </md-tab>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step3">
+                  <div class="step-text">{{ (onlineStep3 | async)?.name }}</div>
+                  <div class="step-numb"><span>3</span><i class="material-icons">check</i></div>
+                  <div class="step-line"></div>
+                  <div class="step-line1"></div>
+                  <!--<div class="step-line2"></div>-->
+                </div>
+              </template>
+              <app-step3 #onlineStepThird></app-step3>
+            </md-tab>
+            <!--<md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step4" [class.active]="onStep > 3">
+                  <div class="step-text">{{ (onlineStep4 | async)?.name }}</div>
+                  <div class="step-numb"><span>4</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                </div>
+              </template>
+              <app-step4></app-step4>
+            </md-tab>-->
+          </md-tab-group>
+          <div class="step-acto">
+            <div class="acto-sure">
+              <i class="material-icons">lock</i>
+              <span>Schere Ubertragung ihrer Daten</span>
+            </div>
+            <div class="acto-butt">
+              <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">
+                <i class="material-icons">keyboard_arrow_left</i>
+                zuruck 
+              </span>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==0" 
+                (click)="onlineStepFirst.onSubmit()">
+                {{ (onlineStep1 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==1"
+                (click)="onlineStepSecond.onSubmit()">
+                {{ (onlineStep2 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==2"
+                (click)="onlineStepThird.onSubmit()">
+                {{ (onlineStep3 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <!--<button md-button class="butt-acto" (click)="prevSTEP()" *ngIf="onStep==3">
+                {{ (onlineStep4 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>-->
+            </div>
+          </div>
+        </md-tab>
+
+        <md-tab class="tabs-post">
+          <template md-tab-label>
+            <div class="mode-labe">POST</div>
+          </template>
+          <md-tab-group dynamicHeight class="tabs-step" [ngClass]="{
+              onstep1: onStep == 0, 
+              onstep2: onStep > 0, 
+              onstep3: onStep > 1, 
+              onstep4: onStep > 2
+            }" selectedIndex={{onStep}}>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step1">
+                  <div class="step-text">{{ (onlineStep1 | async)?.name }}</div>
+                  <div class="step-numb"><span>1</span><i class="material-icons">check</i></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step1 #postStepFirst></app-step1>
+            </md-tab>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step2">
+                  <div class="step-text">Abrechnung hochladen</div>
+                  <div class="step-numb"><span>2</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step2pos #postStepSecond></app-step2pos>
+            </md-tab>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step3">
+                  <div class="step-text">Abrechnung hochladen</div>
+                  <div class="step-numb"><span>3</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                </div>
+              </template>
+              <app-step3 #postStepThird></app-step3>
+            </md-tab>
+          </md-tab-group>
+          <div class="step-acto">
+            <div class="acto-sure">
+              <i class="material-icons">lock</i>
+              <span>Schere Ubertragung ihrer Daten</span>
+            </div>
+            <div class="acto-butt">
+              <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">
+                <i class="material-icons">keyboard_arrow_left</i>
+                zuruck 
+              </span>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==0" 
+                (click)="postStepFirst.onSubmit()">
+                {{ (onlineStep1 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==1"
+                (click)="postStepSecond.onSubmit()">
+                {{ (onlineStep2 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==2"
+                (click)="postStepThird.onSubmit()">
+                {{ (onlineStep3 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+            </div>
+          </div>
+        </md-tab>
+
+        <md-tab class="tabs-fax">
+          <template md-tab-label>
+            <div class="mode-labe">FAX</div>
+          </template>
+          <md-tab-group dynamicHeight class="tabs-step" [ngClass]="{
+              onstep1: onStep == 0, 
+              onstep2: onStep > 0, 
+              onstep3: onStep > 1, 
+              onstep4: onStep > 2
+            }" selectedIndex={{onStep}}>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step1">
+                  <div class="step-text">{{ (onlineStep1 | async)?.name }}</div>
+                  <div class="step-numb"><span>1</span><i class="material-icons">check</i></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step1 #faxStepFirst></app-step1>
+            </md-tab>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step2">
+                  <div class="step-text">Abrechnung hochladen</div>
+                  <div class="step-numb"><span>2</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                  <div class="step-line2"></div>
+                </div>
+              </template>
+              <app-step2fax #faxStepSecond></app-step2fax>
+            </md-tab>
+            <md-tab disabled>
+              <template md-tab-label>
+                <div class="labe-step step3">
+                  <div class="step-text">Abrechnung hochladen</div>
+                  <div class="step-numb"><span>3</span><i class="material-icons">check</i></div>
+                  <div class="step-line1"></div>
+                </div>
+              </template>
+              <app-step3 #faxStepThird></app-step3>
+            </md-tab>
+          </md-tab-group>
+          <div class="step-acto">
+            <div class="acto-sure">
+              <i class="material-icons">lock</i>
+              <span>Schere Ubertragung ihrer Daten</span>
+            </div>
+            <div class="acto-butt">
+              <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">
+                <i class="material-icons">keyboard_arrow_left</i>
+                zuruck 
+              </span>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==0" 
+                (click)="faxStepFirst.onSubmit()">
+                {{ (onlineStep1 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==1"
+                (click)="faxStepSecond.onSubmit()">
+                {{ (onlineStep2 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+              <button md-button class="butt-acto" 
+                *ngIf="onStep==2"
+                (click)="faxStepThird.onSubmit()">
+                {{ (onlineStep3 | async)?.cta }} 
+                <i class="material-icons">keyboard_arrow_right</i>
+              </button>
+            </div>
+          </div>
+        </md-tab>
+
+      </md-tab-group>
+    </div>
+  </div>
+  <div class="trust_logo">
+    <div class="trust_cont">
+      <img src="assets/trust_ekogold.png" alt="trust_ekomi">
+      <img src="assets/trust_norton.png" alt="trust_norton">
+      <img src="assets/trust_ssl.jpg" alt="trust_ssl">
+    </div>
+  </div>
+</div>
+
+<footer>
+    <div class="upfot">
+      <div class="sect">
+          <h5>MINEKO</h5>
+          <ul>
+              <li><a href="#">Impressum</a></li>
+              <li><a href="#">AGB</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Abrechnung prüfen lassen</a></li>
+          </ul>
+      </div>
+      <div class="space"></div>
+      <div class="sect">
+          <h5>SOZIALE</h5>
+          <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Xing</a></li>
+          </ul>
+      </div>
+      <div class="space"></div>
+      <div class="sect">
+          <h5>ÜBER</h5>
+          <ul>
+              <li><a href="#">Kontakt</a></li>
+              <li><a href="#">Häufig gestellte Fragen</a></li>
+              <li><a href="#">Presse</a></li>
+              <li><a href="#">News</a></li>
+          </ul>
+      </div>
+    </div>
+    <div class="sufot">
+        <span>© 2017 Mineko GmbH. Alle Rechte vorbehalten.</span>
+    </div>
+</footer>

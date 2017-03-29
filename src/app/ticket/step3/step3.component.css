@@ -1,0 +1,7 @@
+.main-info{
+  flex: 2;
+}
+.main-file{
+  flex: 1;
+  border-left: 1px solid silver;
+}

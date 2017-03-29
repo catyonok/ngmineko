@@ -1,0 +1,44 @@
+<div class="step-cont step2">
+  <div class="step-main">
+    <div class="main-file flex1 bord-righ">
+      <div class="file-info">
+        <label class="uploader" ondragover="return false;"
+            [style.borderColor]="dragging ? activeColor : baseColor"
+            (dragenter)="handleDragEnter()"
+            (dragleave)="handleDragLeave()"
+            (drop)="handleDrop($event)">
+            <div *ngIf="!loading">
+              <small>{{filen}} file uploaded</small> 
+              <i class="icon material-icons">cloud_upload</i>
+            </div>
+            <div *ngIf="loading">
+              <small>{{filetoload}} uplaoding...</small> 
+              <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+            <input type="file" multiple name="file" accept="image/*|pdf"
+                (change)="handleInputChange($event)">
+        </label> 
+      </div>
+    </div>
+    <div class="main-info flex2">
+      <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="main-field" *ngFor="let file of step2Get | async">
+          <i class="material-icons btn-del" (click)="fileDelete(file)">delete</i>
+          <md-input-container (click)="goDoc(file.url)">
+            <input mdInput [value]="file.name" disabled>
+          </md-input-container>
+          <md-select placeholder="Welches dokument?" 
+            [class.error]="form.controls[file.id].hasError('required') && submitted"
+            formControlName="{{file.id}}" required>
+            <md-option *ngFor="let doctype of doctypes" [value]="doctype.value">{{ doctype.viewValue }}</md-option>
+          </md-select>
+        </div>
+      </form>
+      <div class="fiel-tito" *ngIf="filen==0">
+        <small>Hier Dateien reinziehen <span>order</span> klicken um Dateien auswählen</small>
+      </div>
+    </div>
+  </div>    
+</div>
