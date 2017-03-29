@@ -1,8 +1,15 @@
+.myhomepage{
 
-@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+  
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 .homepage{
-  font-family: 'Questrial', sans-serif;
+/*  font-family: 'Questrial', sans-serif;*/
   padding-top: 110px;
+  max-width: 1400px;
+  margin: auto;
+}
 
 /* MAIN-MENU -------------------------------------*/
 
@@ -36,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   padding: 20px;
   transition: all .5s;
@@ -135,7 +142,7 @@
   padding-left: 18px;
   padding-right: 15px;
   border: none;
-  border-radius: 100px;
+  border-radius: 5px;
   position: relative;
   cursor: pointer;
   text-transform: uppercase;
@@ -152,7 +159,7 @@
     position: relative;
   }
   .main-menu-left .material-icons{
-    display: inline;
+/*    display: inline;*/
   }
   .main-menu-trust, .main-menu-link{
     display: none;
@@ -166,16 +173,22 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .main-menu-cta{
+    display: none;
+  }
+  .menu-main{
+    justify-content: center;
+  }
 }
 
 /* MAIN-HEAD -------------------------------------*/
 
 .main-head {
   position: relative;
-  background: url('assets/back_girl2.jpg') center / cover;
+  background: url('assets/back_girl1.jpg') center / cover;
 }
 .head-main {
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -185,16 +198,22 @@
   flex-direction: column;
   justify-content: center;
 }
+.head-main .trustone{
+  position: absolute;
+  right: 40px;
+  bottom: 60px;
+}
 .head-boxe {
-  width: 500px;
+  width: 400px;
   height: auto;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
+  background-color: white;
+  background-color: #D9DCE9;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
   padding: 25px;
   margin-top: 70px;
   margin-bottom: 70px;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 .head-boxe h1 {
   font-size: 26px;
@@ -276,21 +295,25 @@
   .head-boxe-cta{
     margin-top: 40px;
   }
+  .head-main .trustone{
+    display: none;
+  }
 }
-
 
 /* MAIN-INFO -------------------------------------*/
 
 .main-info {
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   text-align: center;
+  background-color: #f2f2f2;
+  padding-bottom: 40px;
 }
 .info-tito {
   margin: 0;
   padding: 30px;
   font-size: 30px;
-  border-bottom: 1px solid silver;
+/*  border-bottom: 1px solid silver;*/
 }
 .info-boxe {
   display: -webkit-flex;
@@ -337,15 +360,15 @@
 
 .main-whys {
   background-image: url('assets/back_para.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: black;  
 }
 .whys-more{
   padding: 30px;
-  margin-top: 40px;
+/*  margin-top: 40px;*/
   font-size: 18px;
   border-top: 1px solid silver;
   text-align: center;
@@ -359,7 +382,7 @@
   display: -o-flex;
   display: flex;
   align-items: center;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -417,7 +440,7 @@
 /* MAIN-TRUT -------------------------------------*/
 
 .main-trut{
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   text-align: center;
   padding-top: 40px;
@@ -527,8 +550,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .best-boxe{
   flex: 1;
@@ -633,7 +658,7 @@
 /* MAIN-PRES -------------------------------------*/
 
 .main-pres{
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   text-align: center;
   display: -webkit-flex;
@@ -641,17 +666,26 @@
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  align-items: center;
+/*  align-items: center;*/
   justify-content: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  white-space: nowrap;
+/*  white-space: nowrap;*/
+}
+.main-pres a{
+  text-decoration: none;
 }
 .pres-boxe {
   padding: 20px;
+  flex: 1;
 }
 .pres-boxe img{
   height: 35px;
+}
+.pres-boxe .text{
+/*  display: block;*/
+  color: black;
+  margin-top: 20px;
 }
 @media screen and (max-width: 900px) {
   .main-pres{
@@ -665,7 +699,7 @@
   background-color: #efefef;
 }
 .mobi-cont{
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   padding: 20px;
   padding-top: 40px;
@@ -763,9 +797,9 @@
   
 }
 .news-cont{
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
-  padding: 20px;
+/*  padding: 20px;*/
   padding-top: 80px;
   padding-bottom: 60px;
 }
@@ -797,7 +831,7 @@
 }
 .news-boxo-date{
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: -34px;
+  margin-top: -38px;
   padding: 10px;
   text-align: center;
   color: white;
@@ -808,6 +842,7 @@
 }
 .news-boxo-info h2{
   font-size: 22px;
+  color: #70b42b;
 }
 .news-boxo-info p{
   font-size: 18px;
@@ -818,51 +853,6 @@
   display: block;
   color: #39a8c9;
   margin-top: 10px;
-}
-.news-more{
-  border-bottom: 1px solid silver;
-  padding-bottom: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: right;
-  color: gray;
-}
-.news-boxs{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  margin: -10px;
-  margin-top: 20px;
-}
-.news-boxe{
-  flex: 1;
-  color: black;
-  text-decoration: none;
-  position: relative;
-  margin: 10px;
-}
-.news-boxe img{
-  width: 100%;
-  position: relative;
-  z-index: -1;
-}
-.news-boxe-date{
-  background-color: rgba(0, 0, 0, 0.3);
-  margin-top: -34px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  font-size: 14px;
-}
-.news-boxe h2{
-  font-size: 15px;
-}
-@media screen and (max-width: 1000px) {
-  .more-news{
-    display: none;
-  }
 }
 @media screen and (max-width: 700px) {
   .news-boxo{
@@ -882,7 +872,7 @@
   background-color: #f0f0f0;
 }
 .iseo-cont{
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   padding: 20px;
   padding-top: 40px;
@@ -924,7 +914,7 @@
   padding-top: 50px;
 }
 .foot-cont{
-  max-width: 1200px;
+  max-width: 1400PX;
   margin: auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -978,6 +968,13 @@
   height: 50px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 20px;
+}
+.foot-boxo-info img{
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 .foo-trut-cta{
   height: 40px;
@@ -990,7 +987,7 @@
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 2px 2px 2px #4b8017;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   white-space: nowrap;
   padding-left: 30px;
   padding-right: 30px;

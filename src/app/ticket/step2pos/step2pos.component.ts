@@ -10,6 +10,11 @@ export class Step2posComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onSubmit() {
+    
   }
 
 }

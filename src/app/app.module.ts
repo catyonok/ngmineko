@@ -15,11 +15,14 @@ import { Step3Component } from './ticket/step3/step3.component';
 import { Step2faxComponent } from './ticket/step2fax/step2fax.component';
 import { Step2posComponent } from './ticket/step2pos/step2pos.component';
 import { NewsComponent } from './news/news.component';
+import { NewslistComponent } from './news/newslist/newslist.component';
+import { NewspostComponent } from './news/newspost/newspost.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
-  { path: 'news', component: NewsComponent },
-  { path: 'ticket', component: TicketComponent },
+  { path: 'news', component: NewslistComponent },
+  { path: 'news/:news', component: NewsComponent },
+  { path: 'ticket', component: TicketComponent, data: { title: 'Ticket' } },
   { path: 'ticket/:tick', component: TicketComponent },
   { path: 'ticket/:tick/:mode', component: TicketComponent },
   { path: 'ticket/:tick/:mode/:step', component: TicketComponent },
@@ -27,11 +30,11 @@ const ROUTES: Routes = [
 ];
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyDl1eObRZJAL-eWhe8A9Oy-sB0JrWuZ_MA",
-    authDomain: "homepage-6cf8e.firebaseapp.com",
-    databaseURL: "https://homepage-6cf8e.firebaseio.com",
-    storageBucket: "homepage-6cf8e.appspot.com",
-    messagingSenderId: "764410283825"
+  apiKey: "AIzaSyDl1eObRZJAL-eWhe8A9Oy-sB0JrWuZ_MA",
+  authDomain: "homepage-6cf8e.firebaseapp.com",
+  databaseURL: "https://homepage-6cf8e.firebaseio.com",
+  storageBucket: "homepage-6cf8e.appspot.com",
+  messagingSenderId: "764410283825"
 }
 
 @Pipe({ name: 'safeHtml'})
@@ -54,7 +57,9 @@ export class SafeHtmlPipe implements PipeTransform  {
     Step2faxComponent,
     Step2posComponent,
     NewsComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    NewslistComponent,
+    NewspostComponent
   ],
   imports: [
     BrowserModule,

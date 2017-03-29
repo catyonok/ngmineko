@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let new of news" (click)="goNews(new.slug)">
+    {{ new.title.rendered }}
+  </li>
+</ul>

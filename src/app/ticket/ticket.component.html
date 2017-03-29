@@ -14,8 +14,9 @@
 <div class="main-head">
   <div class="head-back">
     <div class="head-tito">
-      <h1>Jetzt <span>Nebenkostenabrechnung</span> hochladen</h1>
-      <h2>Hallo einfach hochladen wir kümmern uns</h2>
+      <h1>Hallo! Einfach hochladen, wir kümmern uns.</h1>
+      <!--<h1>Jetzt <span>Nebenkostenabrechnung</span> hochladen</h1>-->
+      <!--<h2>Hallo einfach hochladen wir kümmern uns</h2>-->
     </div>
     <div class="tabs-uplo">
       <md-tab-group dynamicHeight class="tabs-mode" selectedIndex={{onMode}} (selectChange)="onMODE($event.index)">
@@ -58,26 +59,16 @@
                   <div class="step-numb"><span>3</span><i class="material-icons">check</i></div>
                   <div class="step-line"></div>
                   <div class="step-line1"></div>
-                  <!--<div class="step-line2"></div>-->
+                  <div class="step-line2"></div>
                 </div>
               </template>
               <app-step3 #onlineStepThird></app-step3>
             </md-tab>
-            <!--<md-tab disabled>
-              <template md-tab-label>
-                <div class="labe-step step4" [class.active]="onStep > 3">
-                  <div class="step-text">{{ (onlineStep4 | async)?.name }}</div>
-                  <div class="step-numb"><span>4</span><i class="material-icons">check</i></div>
-                  <div class="step-line1"></div>
-                </div>
-              </template>
-              <app-step4></app-step4>
-            </md-tab>-->
           </md-tab-group>
           <div class="step-acto">
             <div class="acto-sure">
               <i class="material-icons">lock</i>
-              <span>Schere Ubertragung ihrer Daten</span>
+              <span>Sichere Übertragung Ihrer Daten</span>
             </div>
             <div class="acto-butt">
               <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">
@@ -155,7 +146,7 @@
           <div class="step-acto">
             <div class="acto-sure">
               <i class="material-icons">lock</i>
-              <span>Schere Ubertragung ihrer Daten</span>
+              <span>Sichere Übertragung Ihrer Daten</span>
             </div>
             <div class="acto-butt">
               <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">
@@ -229,7 +220,7 @@
           <div class="step-acto">
             <div class="acto-sure">
               <i class="material-icons">lock</i>
-              <span>Schere Ubertragung ihrer Daten</span>
+              <span>Sichere Übertragung Ihrer Daten</span>
             </div>
             <div class="acto-butt">
               <span md-button class="butt-back" (click)="prevSTEP()" *ngIf="onStep>0 && onStep<3">

@@ -5,34 +5,34 @@
         <i class="material-icons">person</i>
         <md-input-container>
           <input mdInput type="text" placeholder="Name" formControlName="name" required>
-          <div *ngIf="form.controls.name.touched || submitted">
-            <small *ngIf="form.controls.name.hasError('required')">Name is required.</small>
-            <small *ngIf="form.controls.name.hasError('minlength')">Name is too short.</small>
+          <div *ngIf="form.controls['name'].touched || submitted">
+            <small *ngIf="form.controls['name'].hasError('required')">Name is required.</small>
+            <small *ngIf="form.controls['name'].hasError('minlength')">Name is too short.</small>
           </div>
         </md-input-container>
         <div class="space"></div>
         <md-input-container>
           <input mdInput type="text" placeholder="Vorname" formControlName="surname" required>
-          <div *ngIf="form.controls.surname.touched || submitted">
-            <small *ngIf="form.controls.surname.hasError('required')">Surname is required.</small>
-            <small *ngIf="form.controls.surname.hasError('minlength')">Surname is too short.</small>
+          <div *ngIf="form.controls['surname'].touched || submitted">
+            <small *ngIf="form.controls['surname'].hasError('required')">Surname is required.</small>
+            <small *ngIf="form.controls['surname'].hasError('minlength')">Surname is too short.</small>
           </div>
         </md-input-container>
       </div>
-        <div class="main-field">
+      <div class="main-field">
         <i class="material-icons">email</i>
         <md-input-container>
           <input mdInput type="email" placeholder="Email" formControlName="email" required>
-          <div *ngIf="form.controls.email.touched || submitted">
-            <small *ngIf="form.controls.email.hasError('required')">Email is required.</small>
-            <small *ngIf="form.controls.email.hasError('invalidEmail')">Email is invalid.</small>
+          <div *ngIf="form.controls['email'].touched || submitted">
+            <small *ngIf="form.controls['email'].hasError('required')">Email is required.</small>
+            <small *ngIf="form.controls['email'].hasError('invalidEmail')">Email is invalid.</small>
           </div>
         </md-input-container>
         <div class="space"></div>
         <md-input-container>
           <input mdInput type="email" placeholder="Remail" formControlName="remail" required>
-          <div *ngIf="form.controls.remail.touched || submitted">
-            <small *ngIf="form.controls.remail.hasError('required')">Remail is required.</small>
+          <div *ngIf="form.controls['remail'].touched || submitted">
+            <small *ngIf="form.controls['remail'].hasError('required')">Remail is required.</small>
             <small *ngIf="form.hasError('mismatchedPasswords')">Emails do not match.</small>
           </div>
         </md-input-container>
@@ -46,10 +46,9 @@
       <div class="main-field">
           <md-checkbox formControlName="agree" required>
             Hiermit akzeptiere ich die <a href="/agb" target="_blank">AGB</a> und die Bestimmungen zum <a href="/datenschutz" target="_blank">Datenschutz</a>. Die weitere Kommunikation erfolgt per E-Mail
-            
-          <div *ngIf="form.controls.agree.touched || submitted">
-            <small *ngIf="form.controls.agree.hasError('required')">Agree is required.</small>
-          </div>
+            <div *ngIf="form.controls['agree'].touched || submitted">
+              <small *ngIf="form.controls['agree'].hasError('required')">Agree is required.</small>
+            </div>
           </md-checkbox>
       </div>
     </form>

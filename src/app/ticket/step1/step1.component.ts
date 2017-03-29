@@ -10,8 +10,7 @@ import { emailValidator, matchingPasswords } from '../ticket.validator';
   styleUrls: ['./step1.component.css']
 })
 export class Step1Component implements OnInit {
-
-  // onlineStep1: FirebaseObjectObservable<any>;
+  
   step1Push: FirebaseListObservable<any>;
   step1Upd: FirebaseListObservable<any>;
   step1Upd2: FirebaseListObservable<any>;
@@ -30,13 +29,11 @@ export class Step1Component implements OnInit {
   }
 
   constructor(
-    af: AngularFire,
-    fb: FormBuilder,
+    private af: AngularFire,
+    private fb: FormBuilder,
     private router: Router,
-    private route:ActivatedRoute,
+    private route: ActivatedRoute,
   ){
-    
-    // this.onlineStep1 = af.database.object('/mode/online/step1');
     this.step1Push = af.database.list('/ticket');
     this.myTick = this.route.snapshot.params['tick'];
     this.step1Upd = af.database.list('/ticket/'+this.myTick+'/step1');

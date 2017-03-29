@@ -10,6 +10,10 @@ export class Step2faxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
+  onSubmit() {
+    
+  }
 }

@@ -17,6 +17,11 @@ export class Step3Component implements OnInit {
   }
 
   ngOnInit() {
+    
+  }
+
+  onSubmit() {
+    
   }
 
 }
